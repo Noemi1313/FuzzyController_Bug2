@@ -1,0 +1,74 @@
+[System]
+Name='ControlReto'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=1
+NumRules=24
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='centro'
+Range=[0 4]
+NumMFs=3
+MF1='MC':'trimf',[-1.667 0 1.667]
+MF2='C':'trimf',[0.3333 2 3.667]
+MF3='L':'trimf',[2.333 4 5.667]
+
+[Input2]
+Name='izquierda'
+Range=[0 4]
+NumMFs=3
+MF1='MC':'trimf',[-1.667 0 1.667]
+MF2='C':'trimf',[0.3333 2 3.667]
+MF3='L':'trimf',[2.333 4 5.667]
+
+[Input3]
+Name='derecha'
+Range=[0 4]
+NumMFs=3
+MF1='MC':'trimf',[-1.667 0 1.667]
+MF2='C':'trimf',[0.3333 2 3.667]
+MF3='L':'trimf',[2.333 4 5.667]
+
+[Output1]
+Name='output1'
+Range=[-2 2]
+NumMFs=7
+MF1='LL':'trimf',[0 0 0.8333]
+MF2='CL':'trimf',[0.1667 1 1.835]
+MF3='MCL':'trimf',[1.165 2 3.67]
+MF4='LLR':'trimf',[-0.8333 0 0]
+MF5='CR':'trimf',[-1.835 -1 -0.1667]
+MF6='MCR':'trimf',[-2.835 -2 -1.165]
+MF7='Z':'trimf',[-0.1 0 0.1]
+
+[Rules]
+1 1 1, 3 (1) : 1
+3 2 2, 6 (1) : 1
+1 2 2, 3 (1) : 1
+2 1 1, 1 (1) : 1
+2 3 3, 1 (1) : 1
+3 3 3, 7 (1) : 1
+3 1 1, 6 (1) : 1
+1 3 3, 6 (1) : 1
+1 2 3, 3 (1) : 1
+1 1 3, 3 (1) : 1
+1 2 1, 3 (1) : 1
+1 3 1, 3 (1) : 1
+2 1 2, 3 (1) : 1
+2 1 3, 3 (1) : 1
+2 2 3, 3 (1) : 1
+2 2 1, 3 (1) : 1
+2 3 1, 3 (1) : 1
+2 3 2, 3 (1) : 1
+3 1 2, 6 (1) : 1
+3 1 3, 6 (1) : 1
+3 2 3, 6 (1) : 1
+3 2 1, 6 (1) : 1
+3 3 1, 6 (1) : 1
+2 2 2, 3 (1) : 1
